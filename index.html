@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Global Voices | Portfolio Business SPA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              emeraldMetal: "#0f3d2e",
+              emeraldGlow: "#1c5a44",
+              chrome: "#d8dee5",
+              slateInk: "#1f2937",
+              glass: "rgba(255,255,255,0.12)",
+            },
+            boxShadow: {
+              glow: "0 0 35px rgba(34, 197, 94, 0.35)",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .glass-panel {
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+      }
+      .dark .glass-panel {
+        background: rgba(12, 32, 24, 0.7);
+        border-color: rgba(255, 255, 255, 0.1);
+      }
+      .nav-link {
+        padding: 0.35rem 0.9rem;
+        border-radius: 9999px;
+        transition: all 0.2s ease;
+      }
+      .nav-link:hover {
+        background: rgba(16, 185, 129, 0.15);
+        transform: translateY(-1px) scale(1.02);
+      }
+      .carousel-slide {
+        transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+      .carousel-slide.hidden-slide {
+        opacity: 0;
+        transform: translateY(20px) scale(0.98);
+        pointer-events: none;
+        position: absolute;
+        inset: 0;
+      }
+    </style>
+  </head>
+  <body class="bg-slate-50 text-slate-900 dark:bg-emeraldMetal dark:text-slate-100">
+    <div
+      class="fixed inset-x-0 top-4 z-50 flex justify-center px-4"
+      aria-label="Primary navigation"
+    >
+      <nav
+        class="glass-panel flex w-full max-w-7xl items-center justify-between rounded-full px-4 py-3 shadow-glow"
+      >
+        <div class="flex items-center gap-3">
+          <div class="flex h-10 w-10 items-center justify-center rounded-full bg-emeraldGlow text-white">
+            GV
+          </div>
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-widest text-emeraldGlow dark:text-emerald-200">
+              Global Voices
+            </p>
+            <p class="text-xs text-slate-500 dark:text-slate-300">Portfolio Business</p>
+          </div>
+        </div>
+        <div class="hidden items-center gap-4 text-sm font-semibold md:flex">
+          <button class="nav-link" data-section="home">Home</button>
+          <button class="nav-link" data-section="courses">Courses</button>
+          <button class="nav-link" data-section="blog">Blog</button>
+          <button class="nav-link" data-section="about">About</button>
+          <button class="nav-link" data-section="contact">Contact</button>
+        </div>
+        <div class="flex items-center gap-2">
+          <button
+            id="darkToggle"
+            class="flex items-center gap-2 rounded-full bg-emeraldGlow px-3 py-2 text-xs font-semibold text-white transition hover:scale-105"
+          >
+            <i class="fa-solid fa-moon"></i>
+            Theme
+          </button>
+          <button
+            id="mobileMenuBtn"
+            class="rounded-full border border-emeraldGlow/40 px-3 py-2 text-emeraldGlow md:hidden"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+
+    <div id="mobileMenu" class="fixed inset-x-4 top-24 z-40 hidden md:hidden">
+      <div class="glass-panel rounded-3xl p-4 text-center text-sm font-semibold">
+        <div class="grid gap-2">
+          <button class="nav-link" data-section="home">Home</button>
+          <button class="nav-link" data-section="courses">Courses</button>
+          <button class="nav-link" data-section="blog">Blog</button>
+          <button class="nav-link" data-section="about">About</button>
+          <button class="nav-link" data-section="contact">Contact</button>
+        </div>
+      </div>
+    </div>
+
+    <main class="pt-32">
+      <section id="home" class="section px-4 pb-16">
+        <div class="mx-auto max-w-7xl">
+          <div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+            <div class="space-y-8">
+              <div class="space-y-4">
+                <p class="text-sm font-semibold uppercase tracking-[0.4em] text-emeraldGlow">
+                  Global Voices for Educators
+                </p>
+                <h1 class="text-4xl font-bold leading-tight md:text-5xl">
+                  Elevate global dialogue for educators and advanced English speakers who care about discussing public
+                  and global problems.
+                </h1>
+                <p class="text-lg text-slate-600 dark:text-slate-300">
+                  Global Voices is a portfolio business dedicated to high-impact communication. We craft immersive
+                  learning pathways that connect Sustainable Development Goals with confident speaking, debate, and
+                  leadership skills.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                  <button
+                    class="rounded-full bg-emeraldGlow px-6 py-3 text-sm font-semibold text-white shadow-lg transition hover:-translate-y-1 hover:shadow-glow"
+                  >
+                    Enroll in Global Voices Speaking Program
+                  </button>
+                  <button
+                    class="rounded-full border border-emeraldGlow/60 px-6 py-3 text-sm font-semibold text-emeraldGlow transition hover:-translate-y-1 hover:bg-emeraldGlow/10"
+                  >
+                    Teacher Training program in IB PYP
+                  </button>
+                </div>
+              </div>
+              <div class="glass-panel rounded-3xl p-6">
+                <div class="flex flex-wrap items-center gap-6">
+                  <div>
+                    <p class="text-sm uppercase tracking-widest text-slate-500">Mission</p>
+                    <p class="text-xl font-semibold">Establish global awareness about SDGs and create an unforgettable experience.</p>
+                  </div>
+                  <div class="h-10 w-px bg-slate-300/40 dark:bg-slate-200/30"></div>
+                  <div>
+                    <p class="text-sm uppercase tracking-widest text-slate-500">Vision</p>
+                    <p class="text-xl font-semibold">Sharing is caring.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="flex items-center gap-4">
+                <div class="relative flex-1">
+                  <i class="fa-solid fa-magnifying-glass absolute left-4 top-3 text-slate-400"></i>
+                  <input
+                    type="text"
+                    placeholder="Search courses, SDG topics, or public speaking labs"
+                    class="w-full rounded-full border border-slate-200 bg-white/70 py-3 pl-11 pr-4 text-sm outline-none backdrop-blur-md transition focus:border-emeraldGlow dark:border-white/10 dark:bg-emeraldMetal"
+                  />
+                </div>
+                <button class="rounded-full bg-emeraldGlow px-4 py-3 text-sm font-semibold text-white">
+                  Explore
+                </button>
+              </div>
+            </div>
+
+            <div class="relative">
+              <div class="glass-panel relative h-full rounded-[32px] p-6 shadow-glow">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <p class="text-sm uppercase tracking-widest text-slate-400">Interactive Story Carousel</p>
+                    <h2 class="text-2xl font-semibold">Global Awareness Spotlights</h2>
+                  </div>
+                  <div class="flex gap-2">
+                    <button id="prevSlide" class="rounded-full border border-white/20 px-3 py-2">
+                      <i class="fa-solid fa-arrow-left"></i>
+                    </button>
+                    <button id="nextSlide" class="rounded-full border border-white/20 px-3 py-2">
+                      <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="relative mt-6 h-[320px] overflow-hidden">
+                  <div class="carousel-slide" data-slide="0">
+                    <div class="space-y-4">
+                      <span class="rounded-full bg-emeraldGlow/20 px-3 py-1 text-xs font-semibold text-emeraldGlow">
+                        SDG 4 - Quality Education
+                      </span>
+                      <h3 class="text-2xl font-semibold">Story Lab: Voices for Equity</h3>
+                      <p class="text-sm text-slate-500 dark:text-slate-300">
+                        Learners explore real-world education gaps and craft persuasive narratives that inspire policy
+                        change.
+                      </p>
+                      <div class="rounded-2xl border border-white/10 bg-white/30 p-4">
+                        <p class="text-sm">
+                          "We teach learners to build evidence-based arguments and deliver them with empathy, clarity,
+                          and confidence."
+                        </p>
+                        <p class="mt-3 text-xs text-slate-500">Facilitator insight</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-slide hidden-slide" data-slide="1">
+                    <div class="space-y-4">
+                      <span class="rounded-full bg-emeraldGlow/20 px-3 py-1 text-xs font-semibold text-emeraldGlow">
+                        SDG 13 - Climate Action
+                      </span>
+                      <h3 class="text-2xl font-semibold">Debate Arena: Climate & Communities</h3>
+                      <p class="text-sm text-slate-500 dark:text-slate-300">
+                        Advanced speakers collaborate on policy solutions while refining tone, pacing, and rhetorical
+                        strategies.
+                      </p>
+                      <ul class="space-y-2 text-sm">
+                        <li class="flex items-center gap-2">
+                          <i class="fa-solid fa-circle-check text-emeraldGlow"></i>
+                          Climate storytelling frameworks
+                        </li>
+                        <li class="flex items-center gap-2">
+                          <i class="fa-solid fa-circle-check text-emeraldGlow"></i>
+                          Cross-cultural negotiation skills
+                        </li>
+                        <li class="flex items-center gap-2">
+                          <i class="fa-solid fa-circle-check text-emeraldGlow"></i>
+                          Live feedback from mentors
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="carousel-slide hidden-slide" data-slide="2">
+                    <div class="space-y-4">
+                      <span class="rounded-full bg-emeraldGlow/20 px-3 py-1 text-xs font-semibold text-emeraldGlow">
+                        SDG 16 - Peace & Justice
+                      </span>
+                      <h3 class="text-2xl font-semibold">Forum: Dialogue for Peace</h3>
+                      <p class="text-sm text-slate-500 dark:text-slate-300">
+                        Simulated UN-style dialogues to practice moderation, diplomacy, and ethically grounded decision
+                        making.
+                      </p>
+                      <div class="grid gap-3 md:grid-cols-2">
+                        <div class="rounded-2xl border border-white/10 bg-white/20 p-3">
+                          <p class="text-sm font-semibold">Crisis briefing packs</p>
+                          <p class="text-xs text-slate-500">Updated monthly</p>
+                        </div>
+                        <div class="rounded-2xl border border-white/10 bg-white/20 p-3">
+                          <p class="text-sm font-semibold">Live facilitation</p>
+                          <p class="text-xs text-slate-500">Global mentors</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="mt-6 flex items-center justify-between">
+                  <div class="flex gap-2" id="carouselDots"></div>
+                  <p class="text-xs text-slate-500">Auto-rotating every 6 seconds</p>
+                </div>
+              </div>
+              <div class="absolute -bottom-8 -right-4 hidden rounded-3xl bg-emeraldGlow/20 p-4 text-xs text-emeraldGlow shadow-xl md:block">
+                High-energy learning journeys
+              </div>
+            </div>
+          </div>
+          <div class="mt-12 grid gap-6 lg:grid-cols-3">
+            <div class="glass-panel rounded-3xl p-6 transition hover:-translate-y-1 hover:shadow-glow">
+              <h3 class="text-lg font-semibold">Creator Profile</h3>
+              <p class="mt-2 text-sm text-slate-500 dark:text-slate-300">
+                Led by Abir Ahmed Aly Wafa, education strategist and curriculum designer specializing in global
+                citizenship, debate pedagogy, and bilingual excellence.
+              </p>
+            </div>
+            <div class="glass-panel rounded-3xl p-6 transition hover:-translate-y-1 hover:shadow-glow">
+              <h3 class="text-lg font-semibold">Audience Focus</h3>
+              <p class="mt-2 text-sm text-slate-500 dark:text-slate-300">
+                Ideal for educators, school leaders, and advanced English speakers committed to meaningful discussions
+                about public and global challenges.
+              </p>
+            </div>
+            <div class="glass-panel rounded-3xl p-6 transition hover:-translate-y-1 hover:shadow-glow">
+              <h3 class="text-lg font-semibold">Community Impact</h3>
+              <p class="mt-2 text-sm text-slate-500 dark:text-slate-300">
+                Students gain confidence, global literacy, and professional presence through authentic, project-based
+                communication experiences.
+              </p>
+            </div>
+          </div>
+          <div class="mt-10 flex flex-wrap justify-center gap-6">
+            <img
+              src="https://github.com/Abeerahmedwafa123/Global-Voices/blob/main/icon%201.png"
+              alt="Global Voices icon 1"
+              class="h-16 w-16 rounded-2xl bg-white/80 p-3 shadow-lg"
+            />
+            <img
+              src="https://github.com/Abeerahmedwafa123/Global-Voices/blob/main/icon%202.png"
+              alt="Global Voices icon 2"
+              class="h-16 w-16 rounded-2xl bg-white/80 p-3 shadow-lg"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section id="courses" class="section hidden px-4 pb-16">
+        <div class="mx-auto max-w-7xl space-y-10">
+          <div class="glass-panel rounded-3xl p-8">
+            <h2 class="text-3xl font-bold">Courses & Programs</h2>
+            <p class="mt-3 text-slate-500 dark:text-slate-300">
+              Designed for educators and advanced English speakers seeking rigorous, real-world communication
+              experiences aligned with global priorities.
+            </p>
+            <div class="mt-6 grid gap-6 md:grid-cols-2">
+              <div class="rounded-3xl border border-white/10 bg-white/20 p-6">
+                <h3 class="text-xl font-semibold">Global Voices Speaking Program</h3>
+                <p class="mt-2 text-sm text-slate-500 dark:text-slate-300">
+                  12-week speaking accelerator with debate labs, global issue research sprints, and mentor feedback.
+                </p>
+                <ul class="mt-4 space-y-2 text-sm">
+                  <li class="flex items-center gap-2">
+                    <i class="fa-solid fa-bolt text-emeraldGlow"></i> Weekly SDG presentation challenges
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="fa-solid fa-bolt text-emeraldGlow"></i> Advanced pronunciation clinic
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="fa-solid fa-bolt text-emeraldGlow"></i> Personalized growth analytics
+                  </li>
+                </ul>
+              </div>
+              <div class="rounded-3xl border border-white/10 bg-white/20 p-6">
+                <h3 class="text-xl font-semibold">Teacher Training Program in IB PYP</h3>
+                <p class="mt-2 text-sm text-slate-500 dark:text-slate-300">
+                  Immersive training for IB PYP educators focused on inquiry, global citizenship, and assessment for
+                  speaking excellence.
+                </p>
+                <ul class="mt-4 space-y-2 text-sm">
+                  <li class="flex items-center gap-2">
+                    <i class="fa-solid fa-leaf text-emeraldGlow"></i> Unit planner templates & facilitation guides
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="fa-solid fa-leaf text-emeraldGlow"></i> Live model lessons and coaching
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="fa-solid fa-leaf text-emeraldGlow"></i> Credential-ready portfolio evidence
+                  </li>
+                </ul>
+              </div>
+              <div class="rounded-3xl border border-white/10 bg-white/20 p-6">
+                <h3 class="text-xl font-semibold">Global Issues Roundtable</h3>
+                <p class="mt-2 text-sm text-slate-500 dark:text-slate-300">
+                  Monthly immersive seminars for advanced speakers focusing on public policy, humanitarian crises, and
+                  ethical leadership.
+                </p>
+                <button class="mt-4 rounded-full border border-emeraldGlow/60 px-4 py-2 text-xs font-semibold text-emeraldGlow">
+                  Download program outline
+                </button>
+              </div>
+              <div class="rounded-3xl border border-white/10 bg-white/20 p-6">
+                <h3 class="text-xl font-semibold">Speech Lab for Educators</h3>
+                <p class="mt-2 text-sm text-slate-500 dark:text-slate-300">
+                  A guided lab to strengthen storytelling, facilitation, and assessment practices for global issue
+                  classrooms.
+                </p>
+                <button class="mt-4 rounded-full border border-emeraldGlow/60 px-4 py-2 text-xs font-semibold text-emeraldGlow">
+                  Reserve a seat
+                </button>
+              </div>
+            </div>
+          </div>
+          <button class="back-home rounded-full bg-emeraldGlow px-5 py-3 text-sm font-semibold text-white">
+            Back to Home
+          </button>
+        </div>
+      </section>
+
+      <section id="blog" class="section hidden px-4 pb-16">
+        <div class="mx-auto max-w-7xl space-y-10">
+          <div class="glass-panel rounded-3xl p-8">
+            <h2 class="text-3xl font-bold">Global Voices Blog</h2>
+            <p class="mt-3 text-slate-500 dark:text-slate-300">
+              Thought leadership for educators and advanced English speakers shaping discussions around public and
+              global challenges.
+            </p>
+            <div class="mt-6 grid gap-6 lg:grid-cols-3">
+              <article class="rounded-3xl border border-white/10 bg-white/20 p-6">
+                <p class="text-xs uppercase tracking-[0.3em] text-emeraldGlow">Insight</p>
+                <h3 class="mt-2 text-xl font-semibold">Designing SDG-aligned speech assessments</h3>
+                <p class="mt-2 text-sm text-slate-500 dark:text-slate-300">
+                  A framework for measuring critical thinking, evidence use, and global empathy in speaking
+                  assignments.
+                </p>
+                <button class="mt-4 text-sm font-semibold text-emeraldGlow">Read article</button>
+              </article>
+              <article class="rounded-3xl border border-white/10 bg-white/20 p-6">
+                <p class="text-xs uppercase tracking-[0.3em] text-emeraldGlow">Toolkit</p>
+                <h3 class="mt-2 text-xl font-semibold">Facilitating high-energy roundtables</h3>
+                <p class="mt-2 text-sm text-slate-500 dark:text-slate-300">
+                  Practical rituals and pacing techniques that keep advanced learners engaged and accountable.
+                </p>
+                <button class="mt-4 text-sm font-semibold text-emeraldGlow">Download guide</button>
+              </article>
+              <article class="rounded-3xl border border-white/10 bg-white/20 p-6">
+                <p class="text-xs uppercase tracking-[0.3em] text-emeraldGlow">Strategy</p>
+                <h3 class="mt-2 text-xl font-semibold">Building a global issues curriculum</h3>
+                <p class="mt-2 text-sm text-slate-500 dark:text-slate-300">
+                  Learn how to align inquiry cycles with real-world data and multilingual communication.
+                </p>
+                <button class="mt-4 text-sm font-semibold text-emeraldGlow">Read article</button>
+              </article>
+            </div>
+          </div>
+          <button class="back-home rounded-full bg-emeraldGlow px-5 py-3 text-sm font-semibold text-white">
+            Back to Home
+          </button>
+        </div>
+      </section>
+
+      <section id="about" class="section hidden px-4 pb-16">
+        <div class="mx-auto max-w-7xl space-y-10">
+          <div class="glass-panel rounded-3xl p-8">
+            <h2 class="text-3xl font-bold">About Global Voices</h2>
+            <p class="mt-3 text-slate-500 dark:text-slate-300">
+              Global Voices is a premium portfolio business helping educators and advanced English speakers navigate
+              global issues through confident, ethical communication.
+            </p>
+            <div class="mt-6 grid gap-6 md:grid-cols-2">
+              <div class="rounded-3xl border border-white/10 bg-white/20 p-6">
+                <h3 class="text-xl font-semibold">Mission</h3>
+                <p class="mt-2 text-sm text-slate-500 dark:text-slate-300">
+                  Establish global awareness about SDGs and create an unforgettable experience.
+                </p>
+              </div>
+              <div class="rounded-3xl border border-white/10 bg-white/20 p-6">
+                <h3 class="text-xl font-semibold">Vision</h3>
+                <p class="mt-2 text-sm text-slate-500 dark:text-slate-300">Sharing is caring.</p>
+              </div>
+              <div class="rounded-3xl border border-white/10 bg-white/20 p-6">
+                <h3 class="text-xl font-semibold">Values</h3>
+                <ul class="mt-2 space-y-2 text-sm text-slate-500 dark:text-slate-300">
+                  <li>Global empathy and cultural responsiveness</li>
+                  <li>Evidence-based public speaking pedagogy</li>
+                  <li>Human-centered facilitation and mentorship</li>
+                </ul>
+              </div>
+              <div class="rounded-3xl border border-white/10 bg-white/20 p-6">
+                <h3 class="text-xl font-semibold">What Sets Us Apart</h3>
+                <p class="mt-2 text-sm text-slate-500 dark:text-slate-300">
+                  Our experiences blend international education standards with immersive storytelling and analytics to
+                  deliver measurable growth.
+                </p>
+              </div>
+            </div>
+          </div>
+          <button class="back-home rounded-full bg-emeraldGlow px-5 py-3 text-sm font-semibold text-white">
+            Back to Home
+          </button>
+        </div>
+      </section>
+
+      <section id="contact" class="section hidden px-4 pb-20">
+        <div class="mx-auto max-w-7xl space-y-10">
+          <div class="glass-panel rounded-3xl p-8">
+            <h2 class="text-3xl font-bold">Contact & Partnerships</h2>
+            <p class="mt-3 text-slate-500 dark:text-slate-300">
+              Ready to elevate your institution's global voice? Let’s collaborate on impactful, SDG-aligned learning
+              experiences.
+            </p>
+            <div class="mt-6 grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+              <div class="rounded-3xl border border-white/10 bg-white/20 p-6">
+                <h3 class="text-xl font-semibold">Reach Us</h3>
+                <ul class="mt-3 space-y-3 text-sm text-slate-500 dark:text-slate-300">
+                  <li><i class="fa-solid fa-envelope text-emeraldGlow"></i> hello@globalvoices.edu</li>
+                  <li><i class="fa-solid fa-phone text-emeraldGlow"></i> +1 (555) 413-0099</li>
+                  <li><i class="fa-solid fa-location-dot text-emeraldGlow"></i> Global online & hybrid delivery</li>
+                </ul>
+                <div class="mt-6 flex gap-3 text-lg">
+                  <a href="#" class="rounded-full border border-white/30 px-3 py-2"><i class="fa-brands fa-linkedin"></i></a>
+                  <a href="#" class="rounded-full border border-white/30 px-3 py-2"><i class="fa-brands fa-x-twitter"></i></a>
+                  <a href="#" class="rounded-full border border-white/30 px-3 py-2"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+              </div>
+              <form class="rounded-3xl border border-white/10 bg-white/20 p-6">
+                <h3 class="text-xl font-semibold">Schedule a Strategy Call</h3>
+                <div class="mt-4 grid gap-4">
+                  <input
+                    type="text"
+                    placeholder="Full name"
+                    class="rounded-2xl border border-white/20 bg-white/50 px-4 py-3 text-sm outline-none focus:border-emeraldGlow"
+                  />
+                  <input
+                    type="email"
+                    placeholder="Email address"
+                    class="rounded-2xl border border-white/20 bg-white/50 px-4 py-3 text-sm outline-none focus:border-emeraldGlow"
+                  />
+                  <textarea
+                    rows="4"
+                    placeholder="Tell us about your goals"
+                    class="rounded-2xl border border-white/20 bg-white/50 px-4 py-3 text-sm outline-none focus:border-emeraldGlow"
+                  ></textarea>
+                  <button class="rounded-full bg-emeraldGlow px-5 py-3 text-sm font-semibold text-white">
+                    Send inquiry
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <button class="back-home rounded-full bg-emeraldGlow px-5 py-3 text-sm font-semibold text-white">
+            Back to Home
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-slate-900 text-slate-200 dark:bg-emeraldGlow">
+      <div class="mx-auto max-w-7xl px-4 py-12">
+        <div class="grid gap-8 md:grid-cols-[1.2fr_0.8fr_1fr]">
+          <div>
+            <h3 class="text-2xl font-semibold">Stay in the Global Voices Circle</h3>
+            <p class="mt-3 text-sm text-slate-300">
+              Subscribe for thought leadership, program launches, and exclusive educator resources.
+            </p>
+          </div>
+          <form class="flex flex-col gap-3">
+            <input
+              type="email"
+              placeholder="Your professional email"
+              class="rounded-full border border-white/20 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-slate-300 outline-none focus:border-emerald-200"
+            />
+            <button class="rounded-full bg-white/90 px-5 py-3 text-sm font-semibold text-emeraldGlow">
+              Join newsletter
+            </button>
+          </form>
+          <div>
+            <h4 class="text-sm font-semibold uppercase tracking-[0.3em] text-slate-300">Socials</h4>
+            <div class="mt-4 flex gap-3 text-xl">
+              <a href="#" class="rounded-full border border-white/20 px-3 py-2"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="#" class="rounded-full border border-white/20 px-3 py-2"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="#" class="rounded-full border border-white/20 px-3 py-2"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" class="rounded-full border border-white/20 px-3 py-2"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+            <p class="mt-4 text-xs text-slate-400">© 2025 Global Voices. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="fixed bottom-6 right-6 z-50">
+      <div class="glass-panel w-72 rounded-3xl p-4 shadow-glow">
+        <div class="flex items-center justify-between">
+          <h4 class="text-sm font-semibold">Live Chat</h4>
+          <span class="text-xs text-emeraldGlow">Online</span>
+        </div>
+        <p class="mt-3 text-xs text-slate-500 dark:text-slate-300">
+          Ask about courses, partnerships, or scheduling a strategic consultation.
+        </p>
+        <div class="mt-3 flex items-center gap-2">
+          <input
+            type="text"
+            placeholder="Type your message..."
+            class="flex-1 rounded-full border border-white/20 bg-white/40 px-3 py-2 text-xs outline-none focus:border-emeraldGlow"
+          />
+          <button class="rounded-full bg-emeraldGlow px-3 py-2 text-xs font-semibold text-white">
+            Send
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const sections = Array.from(document.querySelectorAll(".section"));
+      const navLinks = Array.from(document.querySelectorAll(".nav-link"));
+      const backButtons = Array.from(document.querySelectorAll(".back-home"));
+      const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const darkToggle = document.getElementById("darkToggle");
+
+      const setActiveSection = (sectionId) => {
+        sections.forEach((section) => {
+          if (section.id === sectionId) {
+            section.classList.remove("hidden");
+            section.classList.add("animate__animated", "animate__fadeInUp");
+          } else {
+            section.classList.add("hidden");
+            section.classList.remove("animate__animated", "animate__fadeInUp");
+          }
+        });
+        navLinks.forEach((link) => {
+          link.classList.toggle("text-emeraldGlow", link.dataset.section === sectionId);
+        });
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      };
+
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          setActiveSection(link.dataset.section);
+          mobileMenu.classList.add("hidden");
+        });
+      });
+
+      backButtons.forEach((button) => {
+        button.addEventListener("click", () => setActiveSection("home"));
+      });
+
+      mobileMenuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      darkToggle.addEventListener("click", () => {
+        document.documentElement.classList.toggle("dark");
+      });
+
+      const slides = Array.from(document.querySelectorAll(".carousel-slide"));
+      const dotsContainer = document.getElementById("carouselDots");
+      let currentSlide = 0;
+      let carouselTimer;
+
+      const renderDots = () => {
+        dotsContainer.innerHTML = "";
+        slides.forEach((_, index) => {
+          const dot = document.createElement("button");
+          dot.className = `h-2 w-2 rounded-full ${
+            index === currentSlide ? "bg-emeraldGlow" : "bg-slate-300"
+          }`;
+          dot.addEventListener("click", () => showSlide(index));
+          dotsContainer.appendChild(dot);
+        });
+      };
+
+      const showSlide = (index) => {
+        currentSlide = (index + slides.length) % slides.length;
+        slides.forEach((slide, slideIndex) => {
+          slide.classList.toggle("hidden-slide", slideIndex !== currentSlide);
+        });
+        renderDots();
+        restartCarousel();
+      };
+
+      const nextSlide = () => showSlide(currentSlide + 1);
+      const prevSlide = () => showSlide(currentSlide - 1);
+
+      const restartCarousel = () => {
+        clearInterval(carouselTimer);
+        carouselTimer = setInterval(nextSlide, 6000);
+      };
+
+      document.getElementById("nextSlide").addEventListener("click", nextSlide);
+      document.getElementById("prevSlide").addEventListener("click", prevSlide);
+
+      renderDots();
+      restartCarousel();
+    </script>
+  </body>
+</html>
