@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Global Voices | Speak to Inspire</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="top-nav">
+      <div class="brand">Global Voices</div>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#mission">Mission</a>
+        <a href="#programs">Programs</a>
+        <a href="#stories">Stories</a>
+        <a href="#connect">Connect</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-text">
+          <h1>Speak to Inspire</h1>
+          <p>
+            We amplify community-led storytelling so that every voice can ignite
+            collective action.
+          </p>
+          <div class="cta-group">
+            <a class="btn primary" href="#programs">Explore Programs</a>
+            <a class="btn secondary" href="#connect">Partner with Us</a>
+          </div>
+        </div>
+        <div class="hero-media" aria-hidden="true">
+          <div class="orb orb-1"></div>
+          <div class="orb orb-2"></div>
+          <div class="orb orb-3"></div>
+        </div>
+      </section>
+
+      <section class="metrics" aria-label="Impact metrics">
+        <div class="metric" data-key="storytellers">
+          <span class="metric-value">--</span>
+          <span class="metric-label">Storytellers trained</span>
+        </div>
+        <div class="metric" data-key="countries">
+          <span class="metric-value">--</span>
+          <span class="metric-label">Countries represented</span>
+        </div>
+        <div class="metric" data-key="workshops">
+          <span class="metric-value">--</span>
+          <span class="metric-label">Workshops delivered</span>
+        </div>
+        <div class="metric" data-key="youthLeaders">
+          <span class="metric-value">--</span>
+          <span class="metric-label">Youth leaders supported</span>
+        </div>
+      </section>
+
+      <section id="mission" class="mission">
+        <h2>Mission</h2>
+        <p>
+          Global Voices collaborates with community organizers, youth advocates,
+          and cultural institutions to build platforms where lived experiences
+          are honored and heard. We provide training, funding, and digital tools
+          that help storytellers turn local knowledge into global change.
+        </p>
+      </section>
+
+      <section id="programs" class="programs" aria-label="Program highlights">
+        <div class="section-heading">
+          <h2>Upcoming Highlights</h2>
+          <p>Workshops, fellowships, and gatherings curated with our partners.</p>
+        </div>
+        <div class="program-grid" id="highlights"></div>
+      </section>
+
+      <section id="stories" class="stories" aria-label="Featured storytellers">
+        <div class="section-heading">
+          <h2>Stories that Inspire</h2>
+          <p>Snapshots from leaders building inclusive futures.</p>
+        </div>
+        <div class="story-carousel">
+          <button class="carousel-control prev" aria-label="Previous story">
+            ‹
+          </button>
+          <div class="story-track" id="stories-track"></div>
+          <button class="carousel-control next" aria-label="Next story">
+            ›
+          </button>
+        </div>
+      </section>
+
+      <section id="connect" class="connect">
+        <div class="section-heading">
+          <h2>Partner with Global Voices</h2>
+          <p>
+            Share your collaboration idea and our partnerships team will reach
+            out.
+          </p>
+        </div>
+        <form class="contact-form" id="contact-form" novalidate>
+          <div class="form-field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-field">
+            <label for="organization">Organization</label>
+            <input
+              type="text"
+              id="organization"
+              name="organization"
+              placeholder="Optional"
+            />
+          </div>
+          <div class="form-field">
+            <label for="message">How can we collaborate?</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn primary">Send Message</button>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="page-footer">
+      <p>
+        © <span id="year"></span> Global Voices Collective. Crafted with care
+        for communities worldwide.
+      </p>
+    </footer>
+
+    <script src="app.js" type="module"></script>
+  </body>
+</html>
